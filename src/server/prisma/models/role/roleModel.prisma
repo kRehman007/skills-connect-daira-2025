@@ -1,6 +1,12 @@
+enum Roles {
+    CLIENT
+    WORKER
+}
+
+
 model Role {
     id   String @id @default(uuid())
-    name String
+    name Roles
 
     UserRoles UserRoles[]
     createdAt DateTime    @default(now())

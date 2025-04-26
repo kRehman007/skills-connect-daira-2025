@@ -29,7 +29,7 @@
 		"typescript": "^5"
 	},
 	"prisma": {
-		"schema": "src/server/prisma"
+		"schema": "src/server/prisma/models"
 	},
 	"pnpm": {
 		"onlyBuiltDependencies": [
