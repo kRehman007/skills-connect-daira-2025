@@ -1,9 +1,9 @@
 import Image from "next/image";
-import Hero from "@/components/ui/Hero";
-import Plans from "@/components/ui/Plans";
-import WhySkillConnect from "@/components/ui/WhySkillConnect";
-import Footer from "@/components/ui/Footer";
-import Header from "@/components/ui/Header";
+import Hero from "@/app/components/Hero";
+import Plans from "@/app/components/Plans";
+import WhySkillConnect from "@/app/components/WhySkillConnect";
+import Footer from "@/app/components/Footer";
+import Header from "@/app/components/Header";
 
 export default function Home() {
   return (

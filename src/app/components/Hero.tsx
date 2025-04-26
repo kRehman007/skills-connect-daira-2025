@@ -1,6 +1,6 @@
 import React from 'react';
-import { WordRotate } from "@/components/magicui/word-rotate";
-import { RetroGrid } from "@/components/magicui/retro-grid";
+import { WordRotate } from "@/app/components/magicui/word-rotate";
+import { RetroGrid } from "@/app/components/magicui/retro-grid";
 
 function Hero() {
   return (
