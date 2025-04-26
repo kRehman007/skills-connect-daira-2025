@@ -1,0 +1,17 @@
+enum ProposalStatus {
+    ACCEPTED
+    REJECTED
+    PENDING
+}
+
+model Proposal {
+    id          String         @id @default(uuid())
+    description String
+    price       Float
+    status      ProposalStatus @default(PENDING)
+    jobId       String
+    workerId    String
+
+    job    Job  @relation(fields: [jobId], references: [id])
+    worker User @relation(fields: [workerId], references: [id])
+}

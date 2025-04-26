@@ -1,0 +1,14 @@
+enum Roles {
+    CLIENT
+    WORKER
+}
+
+
+model Role {
+    id   String @id @default(uuid())
+    name Roles
+
+    UserRoles UserRoles[]
+    createdAt DateTime    @default(now())
+    updatedAt DateTime    @updatedAt
+}

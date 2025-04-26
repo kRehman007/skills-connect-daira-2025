@@ -165,7 +165,7 @@ import {
 import { Textarea } from "@/app/components/ui/textarea";
 import { Button } from "@/app/components/ui/button";
 import { Input } from "@/app/components/ui/input";
-import { formSchema, FormValues } from "@/shared/zodSchema";
+import { formSchema, FormValues } from "@/shared/schema/zodSchema";
 
 const libraries: any = ["places"];
 

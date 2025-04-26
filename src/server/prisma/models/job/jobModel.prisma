@@ -1,0 +1,30 @@
+enum JobStatus {
+    PENDING
+    COMPLETED
+}
+
+enum JobCategory {
+    Electrician
+    Plumber
+    Carpenter
+    Mechanic
+    Cleaner
+}
+
+model Job {
+    id          String      @id @default(uuid())
+    title       String
+    description String
+    priceRange  String
+    location    String
+    clientId    String
+    category    JobCategory
+    status      JobStatus   @default(PENDING)
+
+    client    User       @relation("ClientJobs", fields: [clientId], references: [id])
+    proposals Proposal[]
+    review    Review? // Changed to optional one-to-one relation
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
