@@ -8,6 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/app/components/ui/card";
+import Link from "next/link";
 interface ProjectCard {
   id: string;
   title: string;
@@ -71,7 +72,7 @@ export default function ProjectCardsPage() {
 
   return (
     <div className="container mx-auto py-8 px-4">
-      <h1 className="text-3xl font-bold mb-8">Available Projects</h1>
+      <h1 className="text-3xl font-bold mb-8 text-center">Available Projects</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {projects.map((project) => (
@@ -92,9 +93,10 @@ export default function ProjectCardsPage() {
               </div>
             </CardContent>
             <CardFooter className="flex justify-end pt-4">
-              <Button variant="default" size="sm">
+                <Link href={`/jobs/${"fghjk"}/proposals`}>
+              <Button  variant="default" className="bg-blue-700 text-white" size="sm">
                 View all proposals
-              </Button>
+              </Button></Link>
             </CardFooter>
           </Card>
         ))}

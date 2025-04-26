@@ -15,12 +15,12 @@ import {
 const mainItems = [
   {
     title: "My Jobs",
-    url: "#",
+    url: "/jobs/my-jobs",
     icon: User,
   },
   {
     title: "Create Job",
-    url: "#",
+    url: "/jobs/create",
     icon: Plus,
   },
 ];
@@ -28,7 +28,7 @@ const mainItems = [
 const bottomItems = [
   {
     title: "Profile",
-    url: "#",
+    url: "/profile",
     icon: Settings,
   },
   {
@@ -41,7 +41,7 @@ const bottomItems = [
 export function AppSidebar() {
   return (
     <Sidebar>
-      <SidebarContent className="flex flex-col h-full justify-between">
+      <SidebarContent className="flex flex-col h-full justify-between border-none overflow-hidden"> {/* Ensure no border and prevent overflow */}
         
         {/* Top Section */}
         <div>
@@ -90,3 +90,4 @@ export function AppSidebar() {
     </Sidebar>
   );
 }
+
