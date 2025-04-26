@@ -9,7 +9,7 @@ export async function enhanceProposal(
 ) {
 	try {
 		const { text } = await generateText({
-			model: google("gemini-2.0-pro"),
+			model: google("gemini-2.5-pro-exp-03-25"),
 			prompt: `Job Description: ${jobDescription}\n\nOriginal Proposal: ${proposal}`,
 			system: `You are a professional proposal writer. Your task is to enhance and restructure the given proposal statement while considering the job description provided. 
 
