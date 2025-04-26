@@ -1,3 +1,5 @@
+"use server";
+
 import { MessageRepository } from "../../repositories/message/messageRepository";
 
 const messageRepo = new MessageRepository();
