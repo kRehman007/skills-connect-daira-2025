@@ -101,7 +101,10 @@ export class ProposalRepository {
 		});
 	}
 
-	async findByJobId(jobId: string): Promise<ProposalDto[]> {
+	async findByJobId(
+		jobId: string,
+		options?: { offset?: number; limit?: number }
+	): Promise<ProposalDto[]> {
 		return prisma.proposal.findMany({
 			where: { jobId },
 			include: {
@@ -118,10 +121,15 @@ export class ProposalRepository {
 				},
 			},
 			orderBy: { id: "desc" },
+			skip: options?.offset ?? 0,
+			take: options?.limit ?? 10,
 		});
 	}
 
-	async findByWorkerId(workerId: string): Promise<ProposalDto[]> {
+	async findByWorkerId(
+		workerId: string,
+		options?: { offset?: number; limit?: number }
+	): Promise<ProposalDto[]> {
 		return prisma.proposal.findMany({
 			where: { workerId },
 			include: {
@@ -138,6 +146,8 @@ export class ProposalRepository {
 				},
 			},
 			orderBy: { id: "desc" },
+			skip: options?.offset ?? 0,
+			take: options?.limit ?? 10,
 		});
 	}
 
