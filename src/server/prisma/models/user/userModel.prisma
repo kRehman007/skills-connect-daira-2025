@@ -1,0 +1,21 @@
+model User {
+    id             String  @id
+    email          String  @unique
+    phone          String? @unique
+    firstName      String
+    lastName       String
+    skills         String?
+    avatar         String?
+    subscriptionId String?
+
+    subscription    Subscription? @relation(fields: [subscriptionId], references: [id])
+    jobsPosted      Job[]         @relation("ClientJobs")
+    proposals       Proposal[]
+    UserRoles       UserRoles[]
+    reviewsGiven    Review[]      @relation("ClientReviews")
+    reviewsReceived Review[]      @relation("WorkerReviews")
+    sentMessages    Message[]     @relation("SentMessages")
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}

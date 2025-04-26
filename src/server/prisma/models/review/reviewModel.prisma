@@ -1,0 +1,18 @@
+model Review {
+    id       String @id @default(uuid())
+    comment  String
+    stars    Int
+    clientId String
+    workerId String
+    jobId    String @unique // Added @unique for one-to-one relation
+
+    job    Job  @relation(fields: [jobId], references: [id])
+    client User @relation("ClientReviews", fields: [clientId], references: [id])
+    worker User @relation("WorkerReviews", fields: [workerId], references: [id])
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@index([clientId])
+    @@index([workerId])
+}
