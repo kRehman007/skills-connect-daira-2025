@@ -1,14 +1,14 @@
-import { SidebarProvider, SidebarTrigger } from "@/app/components/sidebar"
-import { AppSidebar } from "@/app/components/app-sidebar"
+import { SidebarProvider, SidebarTrigger } from "@/app/components/sidebar";
+import { AppSidebar } from "@/app/components/app-sidebar";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <SidebarProvider>
+    <SidebarProvider className="flex">
       <AppSidebar />
-      <main>
+      <main className="flex-1">
         <SidebarTrigger />
         {children}
       </main>
     </SidebarProvider>
-  )
+  );
 }

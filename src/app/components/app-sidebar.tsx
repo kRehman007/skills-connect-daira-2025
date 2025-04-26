@@ -42,7 +42,6 @@ export function AppSidebar() {
   return (
     <Sidebar>
       <SidebarContent className="flex flex-col h-full justify-between">
-        
         {/* Top Section */}
         <div>
           <SidebarGroup>
@@ -85,7 +84,6 @@ export function AppSidebar() {
             </SidebarMenu>
           </SidebarGroupContent>
         </div>
-
       </SidebarContent>
     </Sidebar>
   );
