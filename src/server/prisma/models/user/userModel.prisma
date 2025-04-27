@@ -1,17 +1,23 @@
+enum UserRole {
+    CLIENT
+    WORKER
+}
+
 model User {
-    id             String  @id
-    email          String  @unique
-    phone          String? @unique
+    id             String    @id
+    email          String    @unique
+    phone          String?   @unique
     firstName      String
     lastName       String
     skills         String?
     avatar         String?
-    subscriptionId String? @unique
+    subscriptionId String?   @unique
+    role           UserRole?
 
     subscription    Subscription? @relation(fields: [subscriptionId], references: [id])
     jobsPosted      Job[]         @relation("ClientJobs")
+    workerJobs      Job[]         @relation("WorkerJobs")
     proposals       Proposal[]
-    UserRoles       UserRoles[]
     reviewsGiven    Review[]      @relation("ClientReviews")
     reviewsReceived Review[]      @relation("WorkerReviews")
     sentMessages    Message[]     @relation("SentMessages")

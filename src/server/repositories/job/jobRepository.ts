@@ -72,6 +72,10 @@ export class JobRepository {
 
 	async findJobsForWorker(
 		workerId: string,
+		location: {
+			lat: number;
+			lng: number;
+		},
 		options?: {
 			offset?: number;
 			limit?: number;
