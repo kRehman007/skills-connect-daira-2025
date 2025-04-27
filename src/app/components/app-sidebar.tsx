@@ -10,17 +10,18 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/app/components/sidebar";
+import { SignedIn, UserButton } from "@clerk/nextjs";
 
 // Menu items.
 const mainItems = [
   {
     title: "My Jobs",
-    url: "#",
+    url: "/jobs/my-jobs",
     icon: User,
   },
   {
     title: "Create Job",
-    url: "#",
+    url: "/jobs/create",
     icon: Plus,
   },
 ];
@@ -28,7 +29,7 @@ const mainItems = [
 const bottomItems = [
   {
     title: "Profile",
-    url: "#",
+    url: "/profile",
     icon: Settings,
   },
   {
@@ -41,7 +42,9 @@ const bottomItems = [
 export function AppSidebar() {
   return (
     <Sidebar>
-      <SidebarContent className="flex flex-col h-full justify-between">
+      <SidebarContent className="flex flex-col h-full justify-between border-none overflow-hidden">
+        {" "}
+        {/* Ensure no border and prevent overflow */}
         {/* Top Section */}
         <div>
           <SidebarGroup>
@@ -66,7 +69,6 @@ export function AppSidebar() {
             </SidebarGroupContent>
           </SidebarGroup>
         </div>
-
         {/* Bottom Section */}
         <div className="pb-4">
           <SidebarGroupContent>
@@ -81,6 +83,9 @@ export function AppSidebar() {
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
+              <SignedIn>
+                <UserButton />
+              </SignedIn>
             </SidebarMenu>
           </SidebarGroupContent>
         </div>
