@@ -75,7 +75,7 @@ export default function ProjectCardsPage() {
 
   return (
     <div className="container mx-auto py-8 px-4">
-      <h1 className="text-3xl font-bold mb-8">Available Projects</h1>
+      <h1 className="text-3xl font-bold mb-8 text-center">All Jobs</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {projects.map((project) => (
@@ -100,7 +100,7 @@ export default function ProjectCardsPage() {
                 variant="default"
                 size="sm"
                 onClick={() => setIsModalOpen(true)}
-                className="cursor-pointer"
+                className="cursor-pointer bg-blue-600 text-white"
               >
                 Add proposals
               </Button>
