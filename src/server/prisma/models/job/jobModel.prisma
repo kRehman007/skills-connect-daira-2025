@@ -18,13 +18,16 @@ model Job {
     priceRange  String
     location    String
     clientId    String
+    workerId    String
     category    JobCategory
     status      JobStatus   @default(PENDING)
 
+    worker    User       @relation("WorkerJobs",fields: [userId], references: [id])
     client    User       @relation("ClientJobs", fields: [clientId], references: [id])
     proposals Proposal[]
     review    Review? // Changed to optional one-to-one relation
 
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
+    userId    String
 }
